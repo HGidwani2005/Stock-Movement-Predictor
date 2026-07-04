@@ -20,10 +20,12 @@ for stock in stocks:
     print(f"Downloading {stock}...")
 
     df = yf.download(
-        stock,
-        start=start_date,
-        end=end_date,
-        auto_adjust=False
+    stock,
+    start=start_date,
+    end=end_date,
+    auto_adjust=False,
+    group_by="column",
+    multi_level_index=False
     )
 
     file_path = f"data/raw/{stock}.csv"
